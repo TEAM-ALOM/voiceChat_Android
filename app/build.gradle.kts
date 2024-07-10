@@ -7,6 +7,10 @@ android {
     namespace = "com.alom.voicechat"
     compileSdk = 34
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId = "com.alom.voicechat"
         minSdk = 24

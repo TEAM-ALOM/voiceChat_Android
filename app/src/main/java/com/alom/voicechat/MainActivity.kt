@@ -1,20 +1,38 @@
 package com.alom.voicechat
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.alom.voicechat.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding:ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
+        val mainFragment = MainFragment()
+        val myPageFragment = MyPageFragment()
+        val socialFragment = SocialFragment()
+
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        supportFragmentManager.beginTransaction().replace(R.id.fcv_fragment, mainFragment).commit()
+
+        binding.bottomNav.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.main -> {
+                    supportFragmentManager.beginTransaction().replace(R.id.fcv_fragment, mainFragment).commit()
+                    true
+                }
+                R.id.social -> {
+                    supportFragmentManager.beginTransaction().replace(R.id.fcv_fragment, socialFragment).commit()
+                    true
+                }
+                R.id.myPage -> {
+                    supportFragmentManager.beginTransaction().replace(R.id.fcv_fragment, myPageFragment).commit()
+                    true
+                }
+                else -> false
+            }
         }
+
     }
 }
