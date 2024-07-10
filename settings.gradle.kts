@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "VoiceChat"
+rootProject.name = "voiceChat"
 include(":app")
