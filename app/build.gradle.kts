@@ -74,4 +74,6 @@ dependencies {
     implementation("androidx.credentials:credentials:1.2.2")
     implementation("androidx.credentials:credentials-play-services-auth:1.2.2")
     implementation("com.google.android.libraries.identity.googleid:googleid:1.1.1")
+    // kakao login
+    implementation("com.kakao.sdk:v2-user:2.20.3") // 카카오 로그인 API 모듈
 }
