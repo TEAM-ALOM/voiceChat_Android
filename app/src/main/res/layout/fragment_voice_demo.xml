@@ -6,13 +6,41 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".VoiceDemoFragment">
 
-    <TextView
+    <Button
+        android:id="@+id/record_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="voiceDemo fragment 입니다"
+        android:text="record_start"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+    <Button
+        android:id="@+id/record_stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="record_stop"
+        app:layout_constraintTop_toBottomOf="@+id/record_start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+    <Button
+        android:id="@+id/play_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="play_start"
+        app:layout_constraintTop_toBottomOf="@+id/record_stop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+    <Button
+        android:id="@+id/play_stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="play_stop"
+        app:layout_constraintTop_toBottomOf="@+id/play_start"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         />
 
